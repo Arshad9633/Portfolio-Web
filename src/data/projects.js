@@ -1,0 +1,148 @@
+export const projects = [
+  {
+    n: "01",
+    slug: "ai-knowledge-assistant",
+    tags: ["AI", "Full-stack"],
+    year: "2025",
+    placeholder: "rag assistant",
+    title: "AI Knowledge Assistant",
+    description:
+      "A Retrieval-Augmented Generation assistant that answers questions over private documents. Spring Boot orchestrates embeddings, vector search, and LLM calls; a React chat UI streams responses in real time.",
+    stack: ["React", "Spring Boot", "LLM APIs", "RAG", "Vector Search"],
+    role: "Full-stack Engineer",
+    timeline: "2025 · 3 months",
+    github: "https://github.com/Arshad9633",
+    live: "",
+    overview:
+      "Teams were drowning in scattered internal documentation. This assistant lets them ask plain-language questions and get sourced answers pulled directly from their own files.",
+    builtSteps: [
+      { title: "Document ingestion", body: "A pipeline chunks uploaded documents and stores their embeddings in a vector database for fast semantic lookup." },
+      { title: "Semantic retrieval", body: "Each query is embedded and matched against the store to pull the most relevant passages before any LLM call." },
+      { title: "Orchestration layer", body: "Spring Boot coordinates embeddings, vector search, and streaming LLM responses behind a single clean API." },
+      { title: "Streaming chat UI", body: "A React interface streams tokens in real time and shows the source passages behind every answer." },
+    ],
+    keyFeatures: [
+      "Answers grounded in your own documents",
+      "Inline source citations",
+      "Real-time streaming responses",
+      "Pluggable LLM and vector backends",
+    ],
+    heroImage: "/screenshots/AI-Assisted_Header.png",
+    screens: [
+      "/screenshots/AI-Assisted_Header.png",
+      "/screenshots/AI-Assisted_Header.png",
+      "/screenshots/AI-Assisted_Header.png",
+    ],
+    youtube: "",
+  },
+  {
+    n: "02",
+    slug: "secureauth-platform",
+    tags: ["Security", "Backend"],
+    year: "2024",
+    placeholder: "auth platform",
+    title: "SecureAuth Platform",
+    description:
+      "An authentication and authorization service featuring JWT sessions, two-factor auth, and fine-grained role-based access control — packaged with Docker and shipped through a CI/CD pipeline.",
+    stack: ["Java", "Spring Boot", "JWT / 2FA", "RBAC", "Docker", "CI/CD"],
+    role: "Backend Engineer",
+    timeline: "2024 · 4 months",
+    github: "https://github.com/Arshad9633",
+    live: "",
+    overview:
+      "Every product re-implements login, and most get the security details subtly wrong. SecureAuth packages battle-tested authentication and authorization as a service other apps can plug into — issuing tokens, enforcing 2FA, and gating routes by role out of the box.",
+    builtSteps: [
+      { title: "Token-based sessions", body: "Stateless JWT access tokens with rotating refresh tokens keep sessions secure without server-side session storage." },
+      { title: "Two-factor auth", body: "TOTP enrollment and verification add a second factor, with recovery codes and rate-limited attempts to block brute force." },
+      { title: "Role-based access", body: "A permission middleware checks roles and scopes on every protected route, so access rules live in one auditable place." },
+      { title: "Containerized delivery", body: "The service is Dockerized and shipped through a CI/CD pipeline with automated tests gating each deploy to staging and production." },
+    ],
+    keyFeatures: [
+      "JWT access + refresh rotation",
+      "Granular role & permission model",
+      "TOTP two-factor authentication",
+      "Audit-friendly access logs",
+    ],
+    heroImage: "/screenshots/auth-hero.png",
+    screens: [
+      "/screenshots/auth-login.png",
+      "/screenshots/auth-2fa.png",
+      "/screenshots/auth-roles.png",
+    ],
+    youtube: "",
+  },
+  {
+    n: "03",
+    slug: "cross-platform-field-app",
+    tags: ["Mobile"],
+    year: "2024",
+    placeholder: "mobile app",
+    title: "Cross-Platform Field App",
+    description:
+      "A React Native (Expo) application for on-the-go data capture with offline-first sync, push notifications, and a shared REST API powering both the mobile client and a web dashboard.",
+    stack: ["React Native", "Expo", "REST API", "Offline Sync", "Push"],
+    role: "Mobile Engineer",
+    timeline: "2024 · 3 months",
+    github: "https://github.com/Arshad9633",
+    live: "",
+    overview:
+      "Field workers needed to capture data in areas with no signal, then have it sync automatically once they were back online — without losing a single entry.",
+    builtSteps: [
+      { title: "Offline-first storage", body: "Captured data is written locally first and queued, so the app stays fully usable with no connectivity." },
+      { title: "Background sync", body: "A sync queue flushes pending records once a connection returns, with conflict-safe merging." },
+      { title: "Push notifications", body: "Workers receive real-time assignment and status updates through native push notifications." },
+      { title: "Shared REST API", body: "One API powers both the mobile client and a companion web dashboard, keeping data consistent across both." },
+    ],
+    keyFeatures: [
+      "Works fully offline",
+      "Automatic conflict-safe sync",
+      "Native iOS & Android via Expo",
+      "Shared API with web dashboard",
+    ],
+    heroImage: "/screenshots/field-hero.png",
+    screens: [
+      "/screenshots/field-capture.png",
+      "/screenshots/field-queue.png",
+      "/screenshots/field-dashboard.png",
+    ],
+    youtube: "",
+  },
+  {
+    n: "04",
+    slug: "cicd-pipeline-dashboard",
+    tags: ["DevOps", "Tooling"],
+    year: "2023",
+    placeholder: "pipeline dashboard",
+    title: "CI/CD Pipeline Dashboard",
+    description:
+      "A monitoring dashboard that visualizes build, test, and deploy stages across services. Containerized micro-services feed live status to a React front-end for at-a-glance pipeline health.",
+    stack: ["React", "Node.js", "Docker", "CI/CD", "PostgreSQL"],
+    role: "Full-stack Engineer",
+    timeline: "2023 · 2 months",
+    github: "https://github.com/Arshad9633",
+    live: "",
+    overview:
+      "A single screen to see the health of every build and deployment across all services, instead of digging through scattered CI logs whenever something broke.",
+    builtSteps: [
+      { title: "Live status feed", body: "Containerized micro-services report build, test, and deploy state to the dashboard in near real time." },
+      { title: "Stage visualization", body: "A React front-end lays out every pipeline stage so failures are obvious at a glance." },
+      { title: "Historical trends", body: "Past runs are stored in PostgreSQL, powering trend views for flaky tests and slow stages." },
+      { title: "Containerized stack", body: "The whole system is packaged with Docker for consistent, reproducible deployment." },
+    ],
+    keyFeatures: [
+      "At-a-glance pipeline health",
+      "Live build & deploy status",
+      "Historical run trends",
+      "Fully containerized stack",
+    ],
+    heroImage: "/screenshots/pipeline-hero.png",
+    screens: [
+      "/screenshots/pipeline-overview.png",
+      "/screenshots/pipeline-stage.png",
+      "/screenshots/pipeline-history.png",
+    ],
+    youtube: "",
+  },
+];
+
+export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug);
