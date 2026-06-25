@@ -1,21 +1,4 @@
-import { GitHubCalendar } from "react-github-calendar";
 import Reveal from "../Reveal";
-
-// clay-tinted scale: empty → most active (matches your palette)
-const theme = {
-  light: ["#eae2d1", "#e0b9a3", "#cf8a63", "#c06a3e", "#b5532b"],
-};
-
-// keep only the last 365 days, like GitHub's profile graph
-const selectLastYear = (contributions) => {
-  const today = new Date();
-  const yearAgo = new Date();
-  yearAgo.setFullYear(today.getFullYear() - 1);
-  return contributions.filter((day) => {
-    const date = new Date(day.date);
-    return date >= yearAgo && date <= today;
-  });
-};
 
 export default function Activity() {
   return (
@@ -35,15 +18,10 @@ export default function Activity() {
 
         <Reveal delay={0.15}>
           <div className="mt-12 overflow-x-auto rounded-3xl border border-ink/5 bg-card p-7 shadow-sm shadow-ink/5">
-            <GitHubCalendar
-              username="Arshad9633"
-              theme={theme}
-              colorScheme="light"
-              blockSize={13}
-              blockMargin={4}
-              fontSize={14}
-              showColorLegend={true}
-              transformData={selectLastYear}
+            <img
+              src="https://ghchart.rshah.org/b5532b/Arshad9633"
+              alt="Arshad's GitHub contribution graph"
+              className="w-full min-w-[700px]"
             />
           </div>
         </Reveal>
