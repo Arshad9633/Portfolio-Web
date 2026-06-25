@@ -4,8 +4,8 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
   { label: "Activity", href: "#activity" },
+  { label: "Experience", href: "#experience" },
 ];
 
 export default function Navbar() {
