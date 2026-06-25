@@ -5,6 +5,7 @@ const links = [
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Activity", href: "#activity" },
 ];
 
 export default function Navbar() {
