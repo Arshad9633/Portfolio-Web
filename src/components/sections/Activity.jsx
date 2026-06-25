@@ -6,6 +6,17 @@ const theme = {
   light: ["#eae2d1", "#e0b9a3", "#cf8a63", "#c06a3e", "#b5532b"],
 };
 
+// keep only the last 365 days, like GitHub's profile graph
+const selectLastYear = (contributions) => {
+  const today = new Date();
+  const yearAgo = new Date();
+  yearAgo.setFullYear(today.getFullYear() - 1);
+  return contributions.filter((day) => {
+    const date = new Date(day.date);
+    return date >= yearAgo && date <= today;
+  });
+};
+
 export default function Activity() {
   return (
     <section id="activity" className="bg-cream px-6 py-28">
@@ -32,6 +43,7 @@ export default function Activity() {
               blockMargin={4}
               fontSize={14}
               showColorLegend={true}
+              transformData={selectLastYear}
             />
           </div>
         </Reveal>
