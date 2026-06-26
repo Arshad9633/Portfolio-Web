@@ -14,7 +14,7 @@ export default function About() {
 
   return (
     <section id="about" className="border-y border-ink/[0.07] bg-sand px-8 py-[108px]">
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1000px]">
         {/* eyebrow — sits above the grid, full width */}
         <Reveal>
           <p className="mb-3.5 font-mono text-[20px] uppercase tracking-[0.2em] text-clay">

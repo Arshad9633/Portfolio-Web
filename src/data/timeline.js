@@ -1,6 +1,6 @@
 export const timeline = [
   {
-    role: "Full-Stack Developer",
+    role: "Full-Stack Developer(Independent Project)",
     period: "2025 — Present",
     org: "Salon Studio · Warsaw",
     description:
@@ -21,7 +21,7 @@ export const timeline = [
       "Graduate study in Computer Science, with a focus on software engineering and applied AI — LLM integration, RAG, and secure, scalable system design.",
   },
   {
-    role: "B.Sc. Computer Science (Web Technology Eng.)",
+    role: "B.Sc. Computer Science",
     period: "Mar 2018 — Apr 2022",
     org: "Vistula University · Warsaw",
     description:
