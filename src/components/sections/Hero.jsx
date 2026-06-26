@@ -40,14 +40,14 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-4 font-display text-9xl font-semibold leading-[0.95] text-ink sm:text-78xl"
+            className="mt-4 font-display text-7xl font-semibold leading-[0.95] text-ink sm:text-8xl"
           >
             Arshad
             <br />
             Kunnathodi
           </motion.h1>
 
-          <motion.p variants={item} className="mt-7 max-w-lg text-2xl leading-relaxed text-muted">
+          <motion.p variants={item} className="mt-7 max-w-lg text-xl leading-relaxed text-muted">
             I build and ship full-stack web and mobile applications — React and
             React Native (Expo) front-ends, Spring Boot and Django back-ends,
             secured with JWT and role-based auth and delivered through CI/CD —
