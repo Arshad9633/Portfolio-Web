@@ -48,9 +48,10 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={item} className="mt-7 max-w-lg text-2xl leading-relaxed text-muted">
-            I build and ship scalable, secure web &amp; mobile applications — from
-            React and React Native front-ends to Spring Boot back-ends and
-            AI-powered features built on LLMs and RAG.
+            I build and ship full-stack web and mobile applications — React and
+            React Native (Expo) front-ends, Spring Boot and Django back-ends,
+            secured with JWT and role-based auth and delivered through CI/CD —
+            increasingly with AI features built on LLMs and RAG.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">

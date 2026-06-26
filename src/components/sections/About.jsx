@@ -5,8 +5,8 @@ const headline = "Engineering software that's scalable, secure, and genuinely us
 
 const pillars = [
   { title: "Full-stack", sub: "web & mobile" },
-  { title: "AI-native",  sub: "LLM · RAG" },
-  { title: "M.Sc.",      sub: "computer science" },
+  { title: "AI-native", sub: "LLM · RAG" },
+  { title: "M.Sc.", sub: "computer science" },
 ];
 
 export default function About() {
@@ -47,17 +47,18 @@ export default function About() {
           <div>
             <Reveal delay={0.08}>
               <p className="text-lg leading-[1.7] text-muted">
-                I'm a Software Engineer and M.Sc. Computer Science student with
-                hands-on experience building and deploying production web and
-                mobile applications using React, React Native (Expo), and Spring Boot.
+                I'm a Software Engineer and M.Sc. Computer Science student at the
+                University of Vienna, experienced in building and shipping
+                production web and mobile applications across React, React Native
+                (Expo), Spring Boot, and Django.
               </p>
             </Reveal>
 
             <Reveal delay={0.16}>
               <p className="mt-[18px] text-lg leading-[1.7] text-muted">
-                My work spans RESTful API design, JWT and 2FA authentication,
-                role-based access control, containerization, and CI/CD pipelines
-                — increasingly alongside AI-powered features built on LLMs, prompt
+                My work spans REST API design, JWT and 2FA authentication,
+                role-based authorization, containerization, and CI/CD pipelines —
+                increasingly alongside AI-powered features built on LLMs, prompt
                 engineering, model APIs, and Retrieval-Augmented Generation.
               </p>
             </Reveal>

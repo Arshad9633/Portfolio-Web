@@ -1,18 +1,26 @@
 export const skillCategories = [
   {
+    title: "Languages",
+    items: ["Python", "Java", "JavaScript", "SQL"],
+  },
+  {
     title: "Frontend",
-    items: ["React(Vite)", "React Native (Expo)", "TypeScript", "Tailwind CSS", ],
+    items: ["React (Vite)", "React Native (Expo)", "Tailwind CSS", "Bootstrap", "AngularJS"],
   },
   {
     title: "Backend",
-    items: ["Spring Boot", "Java", "REST APIs", "Node.js", "PostgreSQL"],
+    items: ["Spring Boot (Java 21)", "REST APIs", "Django", "Django REST Framework"],
   },
   {
-    title: "AI / ML",
-    items: ["LLM APIs", "Prompt Engineering", "RAG", "Vector Search", "Model Integration"],
+    title: "AI / LLM",
+    items: ["Prompt Engineering", "LLM API Integration", "RAG & Vector DBs", "Ollama (local inference)"],
   },
   {
-    title: "Security & DevOps",
-    items: ["JWT / 2FA", "Role-Based Access", "Docker", "CI/CD Pipelines", "Git", "Kubernetes", "AWS", ],
+    title: "Databases",
+    items: ["MongoDB Atlas", "PostgreSQL", "MySQL"],
+  },
+  {
+    title: "DevOps & Tools",
+    items: ["Git / GitHub", "GitLab CI/CD", "Docker", "AWS", "Kubernetes", "Railway"],
   },
 ];

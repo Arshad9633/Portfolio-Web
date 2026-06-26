@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import Reveal from "../Reveal";
 
 const contactLinks = [
-  { label: "Email",    value: "arshadk000@gmail.com",               href: "mailto:arshadk000@gmail.com" },
+  { label: "Email",    value: "arshadk000@gmail.com",            href: "mailto:arshadk000@gmail.com" },
   { label: "GitHub",   value: "github.com/Arshad9633",           href: "https://github.com/Arshad9633" },
   { label: "LinkedIn", value: "linkedin.com/in/arshad-kunnathodi", href: "https://linkedin.com/in/arshad-kunnathodi" },
 ];
@@ -58,8 +58,9 @@ export default function Contact() {
 
           <Reveal delay={0.15}>
             <p className="mt-7 max-w-md text-lg leading-relaxed text-cream/70">
-              Open to full-time roles, freelance projects, and collaborations.
-              Drop a message or reach me directly.
+              Open to software engineering roles, freelance projects, and
+              collaborations — full-stack, mobile, or AI. Drop a message or
+              reach me directly.
             </p>
           </Reveal>
 
