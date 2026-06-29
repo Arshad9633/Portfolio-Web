@@ -12,8 +12,8 @@ export const skillCategories = [
     items: ["Spring Boot (Java 21)", "REST APIs", "Django", "Microservices", "JWT Authentication", "Spring Security"],
   },
   {
-    title: "Testing",
-    items: ["JUnit 5", "Mockito", "Spring Boot Test"],
+    title: "Testing & API",
+    items: ["JUnit 5", "Mockito", "Spring Boot Test", "Postman", "Swagger"],
   },
   {
     title: "AI / LLM",

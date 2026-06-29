@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import MediaReveal from "../MediaReveal";
 
 const container = {
@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden bg-cream px-20 pb-16 pt-30"
+      className="relative flex min-h-screen items-center overflow-hidden bg-cream px-6 pb-16 pt-28 lg:px-20"
     >
       {/* ambient glows */}
       <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-clay/15 blur-3xl" />
@@ -34,13 +34,13 @@ export default function Hero() {
             Available for work
           </motion.span>
 
-          <motion.p variants={item} className="mt-7 font-mono text-lg uppercase tracking-[0.2em] text-clay">
+          <motion.p variants={item} className="mt-7 font-mono text-sm uppercase tracking-[0.2em] text-clay sm:text-lg">
             Software Engineer · M.Sc. CS
           </motion.p>
 
           <motion.h1
             variants={item}
-            className="mt-4 font-display text-7xl font-semibold leading-[0.95] text-ink sm:text-8xl"
+            className="mt-4 font-display text-5xl font-semibold leading-[0.95] text-ink sm:text-7xl lg:text-8xl"
           >
             Arshad
             <br />
