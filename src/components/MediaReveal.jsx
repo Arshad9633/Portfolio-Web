@@ -30,7 +30,8 @@ export default function MediaReveal({
         src={src}
         alt={alt}
         style={{ y }}
-        className="h-[112%] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        
+        className="h-[112%] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
       />
     </motion.div>
   );

@@ -2,7 +2,8 @@ import { useParams, Link } from "react-router";
 import { motion } from "motion/react";
 import Reveal from "../components/Reveal";
 import MediaReveal from "../components/MediaReveal";
-import Coverflow from "../components/Coverflow";
+import FeatureRow from "../components/FeatureRow";
+import BrowserMockup from "../components/BrowserMockup";
 
 import { projects, getProjectBySlug } from "../data/projects";
 
@@ -70,16 +71,21 @@ export default function CaseStudy() {
       </header>
 
       {/* hero screenshot */}
+      {/* hero screenshot — browser mockup */}
       <section className="px-6 pb-8">
-        <Reveal className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl">
           {project.heroImage ? (
-            <MediaReveal src={project.heroImage} alt={`${project.title} screenshot`} />
+            <BrowserMockup
+              src={project.heroImage}
+              alt={`${project.title} screenshot`}
+              url={project.live ? project.live.replace("https://", "") : ""}
+            />
           ) : (
             <div className={`flex aspect-[16/9] items-center justify-center overflow-hidden rounded-3xl border border-ink/5 ${stripes}`}>
               <p className="font-mono text-muted/70">[ {project.placeholder} — hero shot ]</p>
             </div>
           )}
-        </Reveal>
+        </div>
       </section>
 
       {/* body */}
@@ -157,18 +163,27 @@ export default function CaseStudy() {
         </div>
 
         {/* screens — multiple images */}
-        {project.screens.some((s) => s.startsWith("/")) && (
-          <Reveal className="mt-20">
-            <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-clay">Screens</h2>
-            <div className="relative left-1/2 right-1/2 -mx-[50vw] mt-8 w-screen px-6">
-              <div className="mx-auto max-w-[800px]">
-                <Coverflow
-                  images={project.screens.filter((s) => s.startsWith("/"))}
-                  title={project.title}
-                />
-              </div>
+        {/* screens — alternating feature rows */}
+        {project.screens?.length > 0 && (
+          <div className="mt-20">
+            <Reveal>
+              <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-clay">A closer look</h2>
+            </Reveal>
+            <div className="mt-16 space-y-24">
+              {project.screens.map((screen, i) => {
+                const s = typeof screen === "string" ? { src: screen, title: "", body: "" } : screen;
+                if (!s.src?.startsWith("/")) return null; // skip placeholder labels
+                return (
+                  <FeatureRow
+                    key={i}
+                    screen={s}
+                    index={i}
+                    url={project.live ? project.live.replace("https://", "") : ""}
+                  />
+                );
+              })}
             </div>
-          </Reveal>
+          </div>
         )}
         {/* demo video — only when youtube id is set */}
         {project.youtube && (

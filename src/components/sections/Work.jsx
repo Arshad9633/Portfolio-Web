@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import Reveal from "../Reveal";
 import { Link } from "react-router";
 import { projects } from "../../data/projects";
+import CardSlideshow from "../CardSlideshow";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -41,15 +42,26 @@ export default function Work() {
               whileInView="show"
               whileHover="hover"
               viewport={{ once: false, amount: 0.3 }}
-              className="group grid gap-8 rounded-3xl border border-ink/5 bg-card p-6 shadow-sm shadow-ink/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10 lg:grid-cols-[1fr_1.1fr] lg:p-8"
+              className="group grid gap-8 rounded-3xl border border-ink/5 bg-card p-6 shadow-sm shadow-ink/5 transition-shadow duration-600 hover:shadow-xl hover:shadow-ink/10 lg:grid-cols-[1fr_1.1fr] lg:p-8"
             >
-              <div className="relative flex aspect-[5/3] items-center justify-center overflow-hidden rounded-2xl bg-[repeating-linear-gradient(45deg,#e3dac6_0,#e3dac6_1px,#ece4d5_1px,#ece4d5_15px)]">
-                <span className="absolute left-4 top-4 rounded-lg bg-card px-3 py-1 font-mono text-sm font-medium text-ink shadow-sm shadow-ink/5">
+              <div className="relative aspect-[5/3] overflow-hidden rounded-2xl border border-ink/5">
+                <span className="absolute left-4 top-4 z-10 rounded-lg bg-card px-3 py-1 font-mono text-sm font-medium text-ink shadow-sm shadow-ink/5">
                   {p.n}
                 </span>
-                <p className="font-mono text-muted/70 transition-transform duration-500 group-hover:scale-110">
-                  [ {p.placeholder} ]
-                </p>
+
+                {p.cardImages?.length > 0 ? (
+                  <CardSlideshow images={p.cardImages} />
+                ) : p.heroImage ? (
+                  <img
+                    src={p.heroImage}
+                    alt={p.title}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-[repeating-linear-gradient(45deg,#e3dac6_0,#e3dac6_1px,#ece4d5_1px,#ece4d5_15px)]">
+                    <p className="font-mono text-muted/70">[ {p.placeholder} ]</p>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col justify-center">

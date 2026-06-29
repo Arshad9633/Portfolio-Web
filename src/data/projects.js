@@ -62,8 +62,40 @@ export const projects = [
       "Cloudinary-hosted product images",
       "Admin dashboard",
     ],
-    heroImage: "",
-    screens: ["storefront", "cart & checkout", "admin dashboard"],
+    cardImages: [
+      "/ecommerce/test.png",
+      "/ecommerce/Product.png",
+      "/ecommerce/Add_Cart.png",
+      "/ecommerce/Sign_IN.png",
+    ],
+    heroImage: "/ecommerce/test.png",
+    screens: [
+      {
+        src: "/ecommerce/Sign_UP.png",
+        title: "Sign Up",
+        body: "A simple and intuitive sign-up process with email verification and password strength requirements.",
+      },
+      {
+        src: "/ecommerce/Sign_IN.png",
+        title: "Sign In",
+        body: "A simple and intuitive sign-in process with email verification and password reset.",
+      },
+      {
+        src: "/ecommerce/Product.png",
+        title: "Product",
+        body: "A product page with detailed information, images, and related products to enhance the shopping experience.",
+      },
+      {
+        src: "/ecommerce/Add_Cart.png",
+        title: "Add to Cart",
+        body: "Add-to-basket with a guest-to-user cart merge, flowing into a full checkout and billing flow backed by Spring Boot REST APIs.",
+      },
+      {
+        src: "/ecommerce/check_out.png",
+        title: "Checkout",
+        body: "A seamless checkout experience with multiple payment options and order confirmation.",
+      },
+    ],
     youtube: "",
   },
   {
