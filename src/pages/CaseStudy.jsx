@@ -4,6 +4,8 @@ import Reveal from "../components/Reveal";
 import MediaReveal from "../components/MediaReveal";
 import FeatureRow from "../components/FeatureRow";
 import BrowserMockup from "../components/BrowserMockup";
+import PhoneGrid from "../components/PhoneGrid";
+import PhoneMockup from "../components/PhoneMockup";
 
 import { projects, getProjectBySlug } from "../data/projects";
 
@@ -75,11 +77,17 @@ export default function CaseStudy() {
       <section className="px-6 pb-8">
         <div className="mx-auto max-w-5xl">
           {project.heroImage ? (
-            <BrowserMockup
-              src={project.heroImage}
-              alt={`${project.title} screenshot`}
-              url={project.live ? project.live.replace("https://", "") : ""}
-            />
+            project.tags?.includes("Mobile") ? (
+              <div className="flex justify-center">
+                <PhoneMockup src={project.heroImage} alt={`${project.title} screenshot`} />
+              </div>
+            ) : (
+              <BrowserMockup
+                src={project.heroImage}
+                alt={`${project.title} screenshot`}
+                url={project.live ? project.live.replace("https://", "") : ""}
+              />
+            )
           ) : (
             <div className={`flex aspect-[16/9] items-center justify-center overflow-hidden rounded-3xl border border-ink/5 ${stripes}`}>
               <p className="font-mono text-muted/70">[ {project.placeholder} — hero shot ]</p>
@@ -87,6 +95,7 @@ export default function CaseStudy() {
           )}
         </div>
       </section>
+
 
       {/* body */}
       <div className="mx-auto max-w-5xl px-6 py-16">
@@ -161,30 +170,36 @@ export default function CaseStudy() {
             ))}
           </div>
         </div>
-
-        {/* screens — multiple images */}
-        {/* screens — alternating feature rows */}
-        {project.screens?.length > 0 && (
+        {/* screens — phone grid for mobile projects, alternating rows for web */}
+        {project.screens?.some((s) => (typeof s === "string" ? s : s.src)?.startsWith("/")) && (
           <div className="mt-20">
             <Reveal>
               <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-clay">A closer look</h2>
             </Reveal>
-            <div className="mt-16 space-y-24">
-              {project.screens.map((screen, i) => {
-                const s = typeof screen === "string" ? { src: screen, title: "", body: "" } : screen;
-                if (!s.src?.startsWith("/")) return null; // skip placeholder labels
-                return (
-                  <FeatureRow
-                    key={i}
-                    screen={s}
-                    index={i}
-                    url={project.live ? project.live.replace("https://", "") : ""}
-                  />
-                );
-              })}
-            </div>
+
+            {project.tags?.includes("Mobile") ? (
+              <PhoneGrid
+                screens={project.screens.filter((s) => s.src?.startsWith("/"))}
+              />
+            ) : (
+              <div className="mt-16 space-y-24">
+                {project.screens.map((screen, i) => {
+                  const s = typeof screen === "string" ? { src: screen, title: "", body: "" } : screen;
+                  if (!s.src?.startsWith("/")) return null;
+                  return (
+                    <FeatureRow
+                      key={i}
+                      screen={s}
+                      index={i}
+                      url={project.live ? project.live.replace("https://", "") : ""}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         )}
+
         {/* demo video — only when youtube id is set */}
         {project.youtube && (
           <Reveal className="mt-20">
