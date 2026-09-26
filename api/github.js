@@ -56,6 +56,7 @@ export default async function handler(req, res) {
     if (!json.data?.user) {
       return res.status(500).json({
         error: "GitHub user not found",
+        githubResponse: json,
       });
     }
 
